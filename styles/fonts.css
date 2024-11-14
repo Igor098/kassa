@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 500;
+    src: local(""),
+    url("../fonts/Gilroy-Medium.woff") format("woff"),
+    url("../fonts/Gilroy-Medium.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 600;
+    src: local(""),
+    url("../fonts/Gilroy-Semibold.woff") format("woff"),
+    url("../fonts/Gilroy-Semibold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: 'Tahoma';
+    font-style: normal;
+    font-weight: 400;
+    src: local(""),
+    url("../fonts/Tahoma.woff") format("woff"),
+    url("../fonts/Tahoma.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: 'Tahoma';
+    font-style: normal;
+    font-weight: 700;
+    src: local(""),
+    url("../fonts/Tahoma-Bold.woff") format("woff"),
+    url("../fonts/Tahoma-Bold.woff2") format("woff2");
+}
