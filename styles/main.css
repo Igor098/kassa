@@ -19,11 +19,9 @@
 }
 
 .search-field {
-    position: relative;
     max-width: 376px;
     width: 100%;
     height: 48px;
-    display: grid;
 }
 
 .search-field__input {
@@ -57,15 +55,6 @@
     box-shadow: 0 0 0 0.2rem rgba(158, 158, 158, 0.25);
 }
 
-.search-field__button {
-    position: absolute;
-    right: 16px;
-    top: 12px;
-    width: 24px;
-    height: 24px;
-    background: url("../images/search.svg");
-}
-
 .cash-wrapper {
     width: 100%;
     display: flex;
@@ -84,4 +73,111 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.product {
+    position: relative;
+    display: grid;
+    grid-template-columns: 136px 1fr 180px 32px;
+    grid-column-gap: 8px;
+    padding: 20px 0;
+    border-bottom: 2px solid var(--linen);
+}
+
+.product__image-wrapper {
+    width: 112px;
+    height: 112px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px;
+    background-color: var(--linen);
+    border-radius: 10px;
+}
+
+.product__image {
+    width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.product__desc {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.product__name {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+.product__supplier {
+    color: var(--dark-gray);
+    font-family: "Tahoma", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.product__characters {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product__price {
+    font-family: "Tahoma", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.product__data-wrapper {
+    width: 120px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: stretch;
+    padding: 6px 12px;
+    background-color: var(--linen);
+    border-radius: 8px;
+}
+
+.product__edit {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product__btn-minus {
+    width: 24px;
+    height: 24px;
+    background: url("../images/minus.svg");
+}
+
+.product__btn-plus {
+    width: 24px;
+    height: 24px;
+    background: url("../images/plus.svg");
+}
+
+.product__count-field {
+    font-family: "Tahoma", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.product__btn-remove {
+    position: absolute;
+    right: 0;
+    top: 64px;
+    width: 24px;
+    height: 24px;
+    background: url("../images/close.svg") no-repeat;
+}
+
+#ids {
+    width: 100%;
+    height: auto;
 }

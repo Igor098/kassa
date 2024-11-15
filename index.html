@@ -12,25 +12,25 @@
     <div class="container">
         <div class="cash-header">
             <h1 class="cash__title">Касса самообслуживания</h1>
-            <form class="search-field" action="" aria-controls="none">
-                <input class="search-field__input" type="number" name="search" id="search" placeholder="Поиск">
-                <button class="search-field__button btn-reset"></button>
-            </form>
+            <div class="search-field">
+                <input class="search-field__input" type="text" name="search" id="search" placeholder="Поиск">
+            </div>
+
+            <div class="ids"></div>
 
             <div class="cash-wrapper">
                 <h2 class="cash__name">Корзина</h2>
                 <div class="cash-buttons-wrapper">
-                    <button class="cash__btn-print btn-reset button">Распечатать чек</button>
-                    <button class="cash__btn-add btn-reset button button_color_main">Добавить</button>
+                    <button class="cash__btn-print btn-reset button" id="btnPrint">Распечатать чек</button>
+                    <button class="cash__btn-add btn-reset button button_color_main" id="btnAdd">Добавить</button>
                 </div>
             </div>
         </div>
 
-        <div class="cash-items" id="cash-items">
-
+        <div class="products" id="cart">
         </div>
     </div>
 </main>
-
+<script src="index.js"></script>
 </body>
 </html>

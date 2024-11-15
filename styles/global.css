@@ -26,6 +26,7 @@ body {
     min-width: 320px;
     word-break: normal;
     font-family: "Gilroy", sans-serif;
+    color: var(--black);
 }
 
 input::-webkit-outer-spin-button,
@@ -34,11 +35,21 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
-input[type="number"] {
+input[type="text"] {
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
     margin: 0;
+}
+
+table {
+    border: 3px solid var(--neutral-gray);
+    border-collapse: separate;
+}
+
+th, td {
+    border: 1px solid var(--neutral-gray);
+    padding: 10px;
 }
 
 :root {
