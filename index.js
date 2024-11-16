@@ -60,12 +60,29 @@ const createTable = (items) => {
         itemID.classList.add('item__id')
         itemID.innerHTML = items[i].name
 
+        const itemButton = document.createElement('td')
+        const itemButtonWrapper = document.createElement('div')
+        itemButtonWrapper.classList.add('item__button-wrapper')
+
         const btnAddToCart = document.createElement('button')
-        btnAddToCart.classList.add('item__btn-add')
+        btnAddToCart.classList.add('item__btn-add', 'btn-reset')
+        btnAddToCart.addEventListener("click", () => {
+            console.log(i.id)
+            const item = products.find(item => item.id === Number(items[i].id))
+            if (item) {
+                addItem(item)
+            }else {
+                alert("Ошибка при добавлении")
+            }
+            drawHtml()
+        });
+
+        itemButtonWrapper.appendChild(btnAddToCart)
+        itemButton.appendChild(itemButtonWrapper)
 
         item.appendChild(itemName)
         item.appendChild(itemID)
-        item.appendChild(btnAddToCart)
+        item.appendChild(itemButton)
         table.appendChild(item)
     }
     return table;

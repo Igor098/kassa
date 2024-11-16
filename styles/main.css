@@ -177,7 +177,16 @@
     background: url("../images/close.svg") no-repeat;
 }
 
-#ids {
-    width: 100%;
-    height: auto;
+.item__button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item__btn-add {
+    width: 24px;
+    height: 24px;
+    background-image: url("../images/plus.svg");
+    background-repeat: no-repeat;
+    background-color: var(--linen);
 }
