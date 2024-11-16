@@ -31,20 +31,44 @@ const search = document.querySelector('.ids')
 const productCard = []
 
 const createTable = (items) => {
-    let html = '<table>';
-    html += '<tr>';
-    html += '<th>' + 'Наименование' + '</th>';
-    html += '<th>' + 'ID' + '</th>';
-    html += '</tr>';
+    const table = document.createElement('table')
+    const titles = document.createElement('tr')
+
+    const titleName = document.createElement('th')
+    titleName.innerHTML = 'Наименование'
+
+    const titleID = document.createElement('th')
+    titleID.innerHTML = 'ID'
+
+    const titleAdd = document.createElement('th')
+    titleAdd.innerHTML = 'Добавить'
+
+    titles.appendChild(titleName)
+    titles.appendChild(titleID)
+    titles.appendChild(titleAdd)
+    table.appendChild(titles)
+
     for(let i = 0; i < items.length; i++)
     {
-        html += '<tr>';
-        html += '<td>' + items[i].name + '</td>';
-        html += '<td>' + items[i].id + '</td>';
-        html += '</tr>';
+        const item = document.createElement('tr')
+
+        const itemName = document.createElement('td')
+        itemName.classList.add('item__name')
+        itemName.innerHTML = items[i].name
+
+        const itemID = document.createElement('td')
+        itemID.classList.add('item__id')
+        itemID.innerHTML = items[i].name
+
+        const btnAddToCart = document.createElement('button')
+        btnAddToCart.classList.add('item__btn-add')
+
+        item.appendChild(itemName)
+        item.appendChild(itemID)
+        item.appendChild(btnAddToCart)
+        table.appendChild(item)
     }
-    html += '</table>';
-    return html;
+    return table;
 }
 
 const createItemUiComponent = (item) => {
@@ -138,7 +162,7 @@ const deleteItem = (item) => {
     cart.innerHTML = null;
 
     if (Boolean(element)) {
-        productCard.splice(elementIndex, item.count)
+        productCard.splice(elementIndex, 1)
     }
 }
 
@@ -173,7 +197,13 @@ const drawHtml = () => {
 
 inputField.addEventListener('input', (e) => {
     const items = products.filter(item => item.name.toLowerCase().includes(e.target.value.toLowerCase()))
-    search.innerHTML = inputField.value ? createTable(items) : ''
+
+    while (search.firstChild) {
+        search.firstChild.remove()
+    }
+
+    inputField.value ? search.appendChild(createTable(items)) : ''
+
 })
 
 btnAdd.addEventListener('click', (e) => {
